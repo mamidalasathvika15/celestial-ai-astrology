@@ -1,0 +1,69 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 0. Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // --- Helpers ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // --- User Validation ---
+    function isValidUser(data) {
+      return data.keys().hasAll(['name', 'zodiacSign', 'onboarded', 'streak', 'lastVisit', 'isPremium'])
+        && data.name is string && data.name.size() > 0 && data.name.size() <= 100
+        && data.zodiacSign is string && data.zodiacSign.size() > 0
+        && data.onboarded is bool
+        && data.streak is number
+        && data.lastVisit is string
+        && data.isPremium is bool;
+    }
+
+    // --- JournalEntry Validation ---
+    function isValidJournalEntry(data) {
+      return data.keys().hasAll(['id', 'date', 'content'])
+        && data.id is string
+        && data.date is string
+        && data.content is string && data.content.size() > 0 && data.content.size() <= 10000;
+    }
+
+    // --- Match Rules ---
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidUser(incoming());
+      allow update: if isOwner(userId) && isValidUser(incoming())
+        && (
+          // Update profile
+          incoming().diff(existing()).affectedKeys().hasOnly(['name', 'zodiacSign', 'birthDate', 'birthTime', 'birthLocation', 'onboarded', 'streak', 'lastVisit', 'isPremium'])
+        );
+      
+      match /journal/{entryId} {
+        allow list: if isOwner(userId);
+        allow get: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidJournalEntry(incoming());
+        allow update: if isOwner(userId) && isValidJournalEntry(incoming())
+           && incoming().diff(existing()).affectedKeys().hasOnly(['content']);
+        allow delete: if isOwner(userId);
+      }
+    }
+  }
+}

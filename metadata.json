@@ -1,0 +1,6 @@
+{
+  "name": "Celestial AI Astrology",
+  "description": "A premium, cinematic AI-powered astrology and spiritual companion app featuring personalized horoscopes, birth charts, and relationship insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
