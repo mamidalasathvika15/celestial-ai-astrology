@@ -2,6 +2,63 @@
 </details>
 
 ---
+# 🌌 Celestial AI Astrology
+
+A cinematic, AI-powered spiritual companion that turns your zodiac sign, birth data, and daily mood into deeply personalized cosmic guidance — built with Gemini AI, React, and Firebase.
+
+---
+
+## ✨ What It Does
+
+Most astrology apps serve the same recycled horoscope to every Scorpio on the planet.
+
+**Celestial AI Astrology** works differently: it feeds your zodiac sign, birth details, and current mood directly into a Gemini AI system prompt, generating a fresh, personalized reading every time.
+
+The platform delivers a more interactive and meaningful astrology experience through AI-powered personalization.
+
+---
+
+## 🌠 Core Features
+
+### 🌙 Daily Horoscope
+A mood-aware cosmic snapshot regenerated daily with:
+- Personalized horoscope insights
+- Energy score analysis
+- Lunar phase display
+- Daily spiritual guidance
+
+### 🔮 The Oracle
+An interactive AI chat experience featuring four unique personas:
+
+- **Spiritual Guide** → cosmic wisdom and inner clarity  
+- **Love Coach** → relationship advice and emotional insights  
+- **Dream Weaver** → symbolic interpretations and imaginative guidance  
+- **Life Coach** → motivation, growth, and self-reflection
+
+### 🪐 Birth Chart Reading
+A personalized natal chart interpretation based on:
+- Zodiac sign
+- Birth time
+- Birth location
+
+Rendered as a poetic, AI-generated astrological analysis.
+
+### 📖 Celestial Journal
+A private reflection space where journal entries are analyzed using AI for:
+- Emotional sentiment detection
+- Mood insights
+- Soul-frequency reflections
+- Personal growth tracking
+
+### 💫 Compatibility Analysis
+Describe a relationship or personal dynamic and receive:
+- Relationship compatibility insights
+- Emotional dynamic breakdowns
+- Guidance from the AI Love Coach
+- A personalized **Harmony Exercise**
+
+---
+
 
 ## 🤖 AI Architecture
 
@@ -100,6 +157,17 @@ These are intentionally excluded — generate them locally:
 
 ---
 
-## 📄 License
+## 🔭 Future Improvements
 
-MIT © 2025 Celestial AI Astrology
+- More astrology personalization
+- Improved UI/UX
+- Better emotional insights
+- Expanded compatibility analysis
+- Enhanced journaling features
+
+---
+
+## 👩‍💻 Author
+
+**Mamidala Sathvika**
+
