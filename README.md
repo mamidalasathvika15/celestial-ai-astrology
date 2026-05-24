@@ -7,7 +7,13 @@
 A cinematic, AI-powered spiritual companion that turns your zodiac sign, birth data, and daily mood into deeply personalized cosmic guidance — built with Gemini AI, React, and Firebase.
 
 ---
+Short project description...
 
+## 🎥 Demo Video
+
+https://drive.google.com/file/d/1HxmUu9PwWwj9YEEndeiwIIaHRNbS4TVI/view?usp=sharing
+
+---
 ## ✨ What It Does
 
 Most astrology apps serve the same recycled horoscope to every Scorpio on the planet.
